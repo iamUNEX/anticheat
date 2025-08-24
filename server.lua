@@ -707,8 +707,8 @@ AddEventHandler('weaponDamageEvent', function(sender, data)
     local shouldBlock = false
     if blockedByWorld then
         shouldBlock = true
-    elseif blockedByEvidence and (not aimOk) then
-        -- Only trust client evidence when server also sees aim is unreasonable
+    elseif blockedByEvidence then
+        -- Trust client evidence directly for blocked LOS or bad aim
         shouldBlock = true
     end
 
